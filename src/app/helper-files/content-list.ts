@@ -24,13 +24,17 @@ export class ContentList {
   }
 
   // a function that takes the array and turns it into a pretty html output
-  returnHTML(index: number): string {
+  returnHTML(index: number) {
+    if(index < 0 || index >= this._items.length) {
+      console.log("Invalid")
+    }
+
     return `<div class="contentCard">
                 <h1>${this._items[index].title}</h1>
                 <h4>${this._items[index].creator}</h4>
-                <img src="${this._items[index].imgURL}" />
+                <img src="${this._items[index].imgURL}"  alt=""/>
                 <p>${this._items[index].description}</p>
-                <h4>${this._items[index].type}</h4>
+                <h5>${this._items[index].type}</h5>
             </div>`;
   }
 }
