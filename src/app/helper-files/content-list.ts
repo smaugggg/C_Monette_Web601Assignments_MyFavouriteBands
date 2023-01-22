@@ -1,4 +1,6 @@
-class ContentList {
+import { Content } from './content-interface';
+
+export class ContentList {
   private _items: Content[];
 
   // initially sets the array to be empty
