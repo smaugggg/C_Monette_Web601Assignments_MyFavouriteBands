@@ -1,3 +1,12 @@
+Chantal Monette
+W0800871
+
+I have a wide variety in the music I like, from Hard Rock and Alternative to Kpop and Top40 hits. I'm eager to build an app to store information about my favourite
+groups as this project goes on!!
+
+
+
+
 # Assignments
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
