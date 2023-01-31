@@ -52,4 +52,10 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {   }
 
+
+  imageClick(item: Content) {
+      console.log(item.id + " " + item.title);
+  }
+
+
 }

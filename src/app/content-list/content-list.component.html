@@ -3,9 +3,11 @@
   <div class="contentCard" *ngFor="let item of contentItems.slice(0, 5); index as i; first as First" [class.is-first]="First">
     <h1 class="contentTitle">{{ item.title }}</h1>
     <h5 class="contentGenre">{{ item.type }}</h5>
-    <img src="{{ item.imgURL }}"  alt="" width="250px" />
+    <img src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
   </div>
 </div>
+
+
 
