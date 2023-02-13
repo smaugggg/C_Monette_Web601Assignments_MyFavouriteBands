@@ -8,6 +8,16 @@
   margin: 2.5%;
 }
 
+.Metal {
+  background: #ceabab;
+  color: #4d3232;
+}
+
+.K-Pop {
+  background: #bbabce;
+  color: #40324d;
+}
+
 .contentTitle {
   margin: 0;
   padding-left: 10%;
@@ -25,6 +35,16 @@
   line-height: 125%;
 }
 
+.Metal > .contentTitle, .Metal > .contentGenre {
+  background: #4d3232;
+  color: #ceabab;
+}
+
+.K-Pop > .contentTitle, .K-Pop > .contentGenre {
+  background: #40324d;
+  color: #bbabce;
+}
+
 .contentCard img {
   display: block;
   position: relative;
@@ -36,6 +56,11 @@
 
 .contentMembers {
   font-size: small;
+}
+
+.contentTags {
+  font-size: smaller;
+  text-align: right;
 }
 
 .First {

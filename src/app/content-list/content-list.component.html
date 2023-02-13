@@ -1,11 +1,15 @@
 
+
 <div class="contentContainer">
-  <div class="contentCard" *ngFor="let item of contentItems.slice(0, 5); index as i; first as First" [class.is-first]="First">
+  <input [(ngModel)]="search"><br />
+
+  <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search; index as i; first as First" [class.is-first]="First">
     <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre">{{ item.type }}</h5>
+    <h5 class="contentGenre" *ngIf="item.type">{{ item.type }}</h5>
     <img src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
+    <p class="contentTags" *ngIf="item.tags">{{ item.tags }} </p>
   </div>
 </div>
 
