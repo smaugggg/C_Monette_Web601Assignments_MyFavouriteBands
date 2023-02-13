@@ -67,3 +67,10 @@
   border: 2px solid #4c4c4c;
 }
 
+.not-found {
+  color: red;
+}
+
+.found {
+  color: green;
+}

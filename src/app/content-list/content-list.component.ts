@@ -85,5 +85,12 @@ export class ContentListComponent implements OnInit {
       console.log(item.id + " " + item.title);
   }
 
+  // define the variables I need
+  searchTerm = '';
+  searchResult: boolean | null = null;
+  searchContent() {
+    this.searchResult = this.contentItems.some(c => c.title === this.searchTerm);
+  }
+
 
 }

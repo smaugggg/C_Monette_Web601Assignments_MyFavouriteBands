@@ -1,4 +1,14 @@
+<div>
+  <label for="search">Search by title:</label>
+  <input type="text" id="search" [(ngModel)]="searchTerm">
+  <button (click)="searchContent()">Search</button>
+</div>
 
+<div *ngIf="searchResult !== null">
+  <p [ngClass]="{ 'not-found': searchResult === false, 'found': searchResult === true }">
+    {{ searchResult ? 'Content found' : 'Content not found' }}
+  </p>
+</div>
 
 <div class="contentContainer">
   <input [(ngModel)]="search"><br />
