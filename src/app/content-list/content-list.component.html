@@ -16,32 +16,32 @@
   <h3>Content without type (rock)</h3>
   <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">
     <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect>{{ item.type }}</h5>
+    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
     <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>
     <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags">{{ item.tags }} </p>
+    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
   </div>
 
   <h3>Metal</h3>
   <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'Metal'; index as i; first as First" [class.is-first]="First">
     <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect>{{ item.type }}</h5>
+    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
     <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags">{{ item.tags }} </p>
+    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
   </div>
 
   <h3>K-Pop</h3>
   <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'K-Pop'; index as i; first as First" [class.is-first]="First">
     <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect>{{ item.type }}</h5>
+    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
     <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags">{{ item.tags }} </p>
+    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
   </div>
 </div>
 
