@@ -21,7 +21,11 @@
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>
     <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
+    <ul *ngIf="item.tags">
+      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+        {{ tag }}
+      </li>
+    </ul>
   </div>
 
   <h3>Metal</h3>
@@ -31,7 +35,11 @@
     <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
+    <ul *ngIf="item.tags">
+      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+        {{ tag }}
+      </li>
+    </ul>
   </div>
 
   <h3>K-Pop</h3>
@@ -41,7 +49,11 @@
     <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
     <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
     <p class="contentDesc">{{ item.description }}</p>
-    <p class="contentTags" *ngIf="item.tags" HoverAffect affect="bold">{{ item.tags }}</p>
+    <ul *ngIf="item.tags">
+      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+        {{ tag }}
+      </li>
+    </ul>
   </div>
 </div>
 
