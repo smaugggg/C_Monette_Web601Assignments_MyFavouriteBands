@@ -53,7 +53,6 @@ export class ContentListComponent implements OnInit {
         { id: 6,
           title: 'Red Velvet',
           description: 'Red Velvet is a South Korea girl group formed and managed by SM Entertainment. They have two distinct sides: the Red side is more pop based, while the Velvet side focuses on R&B/Ballads.',
-          imgURL: '/assets/images/redvelvet.png',
           creator: 'Irene, Seulgi, Wendy, Joy, Yeri',
           type: "K-Pop",
           tags: ["south korea", "pop", "k-pop"]
@@ -61,7 +60,6 @@ export class ContentListComponent implements OnInit {
         { id: 7,
           title: 'Måneskin',
           description: 'Måneskin is an Italian rock band currently making waves in the rock scene. They made their international breakthrough by winning the Eurovision Song Contest in 2021.',
-          imgURL: '/assets/images/maneskin.png',
           creator: 'Damiano David, Victoria De Angelis, Thomas Raggi, Ethan Torchio',
           tags: ["italy", "rock", "glam rock", "competition winner"]
         },
