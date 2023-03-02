@@ -92,5 +92,3 @@ export class ContentListComponent implements OnInit {
 
 
 }
-
-// this is a comment to test that assignment 5 branch was created
