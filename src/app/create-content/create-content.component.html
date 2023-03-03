@@ -1,1 +1,10 @@
-<p>create-content works!</p>
+<form (submit)="addContent()">
+<input name="id" type="number" [(ngModel)]="id" placeholder="ID">
+<input name="title" type="text" [(ngModel)]="title" placeholder="Title">
+<input name="description" type="text" [(ngModel)]="description" placeholder="Description">
+<input name="creator" type="text" [(ngModel)]="creator" placeholder="Creator">
+<input name="imgURL" type="text" [(ngModel)]="imgURL" placeholder="Image URL">
+<input name="type" type="text" [(ngModel)]="type" placeholder="Type">
+<input name="tags" type="text" [(ngModel)]="tags" placeholder="Tags (comma-separated)">
+<button name="submit" type="submit">Create Content</button>
+</form>

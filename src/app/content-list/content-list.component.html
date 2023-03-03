@@ -10,8 +10,12 @@
   </p>
 </div>
 
+<br /><br />
+<create-content (addContentEvent)="addContent($event)"></create-content>
+<br /><br />
+
 <div class="contentContainer">
-  <input [(ngModel)]="search"><br />
+  Search by Type: <input [(ngModel)]="search"><br />
 
   <h3>Content without type (rock)</h3>
   <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">

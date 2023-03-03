@@ -90,5 +90,11 @@ export class ContentListComponent implements OnInit {
     this.searchResult = this.contentItems.some(c => c.title === this.searchTerm);
   }
 
+  addContent(content: Content) {
+    const clone = JSON.parse(JSON.stringify(content));
+    this.contentItems.push(clone);
+    console.log(`Added "${content.title}" successfully.`);
+  }
+
 
 }
