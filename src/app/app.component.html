@@ -14,9 +14,10 @@
 <button (click)="getMusic()">Submit</button>
 
 <br /><br />
-<div *ngIf="selectedContent">
-  <content-card [content]="selectedContent"></content-card>
-</div>
 <div *ngIf="errorMessage">
   {{ errorMessage }}
 </div>
+<div *ngIf="selectedContent">
+  <content-card [content]="selectedContent"></content-card>
+</div>
+

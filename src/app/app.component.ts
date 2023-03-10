@@ -30,7 +30,11 @@ export class AppComponent {
     });
   }
 
+  // Assignment 6 bonus
   getMusic() {
+    // clear the old error message when you click the button again
+    this.errorMessage = '';
+
     // validation
     if (this.selectedId === undefined || isNaN(this.selectedId) || this.selectedId < 1 || this.selectedId > contentItems.length) {
       this.errorMessage = 'Error: Please enter a valid ID number.';
@@ -44,7 +48,7 @@ export class AppComponent {
         this.messageService.add(`Retrieved content item at ID: ${this.selectedId}`);
       },
       error => {
-        this.errorMessage = `Error: ${error.message}`;
+        this.errorMessage = `Error: ${this.errorMessage}`;
       }
     );
   }
