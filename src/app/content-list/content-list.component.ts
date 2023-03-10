@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MusicService} from "../music-service.service";
+import {MusicService} from "../Services/music-service.service";
 import {Content} from "../helper-files/content-interface";
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Content } from './helper-files/content-interface';
-import { MusicService } from "./music-service.service";
+import { MusicService } from "./Services/music-service.service";
 
 @Component({
   selector: 'app-root',

@@ -5,8 +5,9 @@ import { FormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
-import { FilterPipe } from './filter.pipe';
-import { HoverAffectDirective } from './hover-affect.directive';
+import { FilterPipe } from './Pipes and Directives/filter.pipe';
+import { HoverAffectDirective } from './Pipes and Directives/hover-affect.directive';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HoverAffectDirective } from './hover-affect.directive';
     ContentCardComponent,
     ContentListComponent,
     FilterPipe,
-    HoverAffectDirective
+    HoverAffectDirective,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
