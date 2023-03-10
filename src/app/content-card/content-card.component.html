@@ -1,5 +1,13 @@
-<div id="contentCard-container">
-
-
+<div [ngClass]="(content.type)" class="contentCard is-featured" id="top-content">
+  <h1 class="contentTitle">{{ content.title }}</h1>
+  <h5 class="contentGenre" *ngIf="content.type" HoverAffect affect="underline">{{ content.type }}</h5>
+  <img *ngIf="content.imgURL" src="{{ content.imgURL }}"  alt="" width="250px" />
+  <img *ngIf="!content.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" />
+  <p class="contentMembers">{{ content.creator }}</p>
+  <p class="contentDesc">{{ content.description }}</p>
+  <ul *ngIf="content.tags">
+    <li class="contentTags" *ngFor="let tag of content.tags" HoverAffect affect="bold">
+      {{ tag }}
+    </li>
+  </ul>
 </div>
-

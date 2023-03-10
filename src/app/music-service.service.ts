@@ -13,4 +13,10 @@ export class MusicService {
   getContent(): Observable<Content[]> {
     return of(contentItems);
   }
+
+  getContentById(id: number): Observable<Content | undefined> {
+    const item = contentItems.find(c => c.id === id);
+    if(item) return of(item);
+    else return of(undefined);
+  }
 }

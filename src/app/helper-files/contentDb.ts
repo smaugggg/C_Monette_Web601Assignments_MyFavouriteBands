@@ -36,7 +36,7 @@ contentItems = [
     title: 'In This Moment',
     description: 'In This Moment is an American Rock band from Los Angeles, California formed in 2005.',
     imgURL: '/assets/images/inthismoment.png',
-    creator: 'Maria Brink, Christ Howorth, Travis Johnson, RAndy Weitzel, Kent Dimmel',
+    creator: 'Maria Brink, Christ Howorth, Travis Johnson, Randy Weitzel, Kent Dimmel',
     type: "Metal",
     tags: ["usa", "metal", "metalcore", "female-led"]
   },

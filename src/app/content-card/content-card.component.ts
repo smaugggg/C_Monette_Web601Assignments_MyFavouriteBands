@@ -8,9 +8,16 @@ import { Content } from '../helper-files/content-interface';
 })
 
 export class ContentCardComponent implements OnInit {
-    constructor() {   }
+  @Input() content: Content = {
+    id: 0,
+    title: '',
+    description: '',
+    creator: ''
+  };
 
-    ngOnInit() {   }
+  constructor() {   }
+
+  ngOnInit() {   }
 }
 
 
