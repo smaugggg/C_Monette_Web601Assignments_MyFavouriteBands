@@ -1,6 +1,22 @@
 <div *ngIf="featuredContent">
   <content-card [content]="featuredContent" [class.is-featured]="true"></content-card>
 </div>
+
+<br /><br />
 <content-list></content-list>
 
+<br /><br />
 <messages></messages>
+
+<br /><br />
+<label for="enter-id">Enter ID:</label>
+<input type="text" id="enter-id" [(ngModel)]="selectedId">
+<button (click)="getMusic()">Submit</button>
+
+<br /><br />
+<div *ngIf="selectedContent">
+  <content-card [content]="selectedContent"></content-card>
+</div>
+<div *ngIf="errorMessage">
+  {{ errorMessage }}
+</div>

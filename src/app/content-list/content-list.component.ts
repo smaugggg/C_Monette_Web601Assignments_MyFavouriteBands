@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Content} from "../helper-files/content-interface";
-import {MusicService} from "../Services/music-service.service";
+import {MusicService} from "../Services/music.service";
 import { MessageService } from "../Services/message.service";
 
 @Component({
