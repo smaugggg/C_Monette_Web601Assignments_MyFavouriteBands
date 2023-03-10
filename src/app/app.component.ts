@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Content } from './helper-files/content-interface';
 import { contentItems } from "./helper-files/contentDb";
 import { MusicService } from "./Services/music.service";
@@ -13,12 +13,7 @@ import { MessageService } from './Services/message.service';
 export class AppComponent {
   featuredContent?: Content;
   selectedId: number = 0;
-  selectedContent: Content = {
-    id: 0,
-    title: '',
-    description: '',
-    creator: ''
-  };
+  @Input() selectedContent?: Content;
   errorMessage: string = '';
 
   constructor(private musicService: MusicService, private messageService: MessageService) {  }
@@ -30,7 +25,7 @@ export class AppComponent {
     });
   }
 
-  // Assignment 6 bonus
+  // Assignment 6 bonus is not quite working
   getMusic() {
     // clear the old error message when you click the button again
     this.errorMessage = '';
@@ -46,9 +41,6 @@ export class AppComponent {
       contentItem => {
         if(contentItem) this.selectedContent = contentItem;
         this.messageService.add(`Retrieved content item at ID: ${this.selectedId}`);
-      },
-      error => {
-        this.errorMessage = `Error: ${this.errorMessage}`;
       }
     );
   }

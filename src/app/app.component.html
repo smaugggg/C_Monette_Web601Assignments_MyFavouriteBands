@@ -18,6 +18,18 @@
   {{ errorMessage }}
 </div>
 <div *ngIf="selectedContent">
-  <content-card [content]="selectedContent"></content-card>
+  <div [ngClass]="(selectedContent.type)" class="contentCard selectedContent">
+    <h1 class="contentTitle">{{ selectedContent.title }}</h1>
+    <h5 class="contentGenre" *ngIf="selectedContent.type" HoverAffect affect="underline">{{ selectedContent.type }}</h5>
+    <img *ngIf="selectedContent.imgURL" src="{{ selectedContent.imgURL }}"  alt="" width="250px" />
+    <img *ngIf="!selectedContent.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" />
+    <p class="contentMembers">{{ selectedContent.creator }}</p>
+    <p class="contentDesc">{{ selectedContent.description }}</p>
+    <ul *ngIf="selectedContent.tags">
+      <li class="contentTags" *ngFor="let tag of selectedContent.tags" HoverAffect affect="bold">
+        {{ tag }}
+      </li>
+    </ul>
+  </div>
 </div>
 
