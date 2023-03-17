@@ -43,6 +43,8 @@ export class ModifyContentComponent implements OnInit {
 
     this.musicService.addContent(newContentItem).subscribe(newContentFromServer => {
       this.contentItems.push(newContentFromServer);
+      console.log(this.contentItems);
+
       this.title = '';
       this.description = '';
       this.creator = '';

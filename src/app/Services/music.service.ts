@@ -16,9 +16,9 @@ export class MusicService {
   };
 
   getContent(): Observable<Content[]> {
+    this.messageService.add('Content array loaded!')
     return this.http.get<Content[]>("api/content");
     // const music = of(contentItems);
-    // this.messageService.add('Content array loaded!')
     // return music;
   }
 
