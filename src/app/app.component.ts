@@ -1,6 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { Content } from './helper-files/content-interface';
-import { contentItems } from "./helper-files/contentDb";
 import { MusicService } from "./Services/music.service";
 import { MessageService } from './Services/message.service';
 
@@ -20,9 +19,9 @@ export class AppComponent {
 
   ngOnInit() {
     const id = 8;
-    this.musicService.getContentById(id).subscribe(content => {
-      this.featuredContent = content;
-    });
+    //this.musicService.getContentById(id).subscribe(content => {
+    //  this.featuredContent = content;
+    //});
   }
 
   // Assignment 6 bonus is not quite working
@@ -31,18 +30,18 @@ export class AppComponent {
     this.errorMessage = '';
 
     // validation
-    if (this.selectedId === undefined || isNaN(this.selectedId) || this.selectedId < 1 || this.selectedId > contentItems.length) {
+    if (this.selectedId === undefined || isNaN(this.selectedId) || this.selectedId < 1) {
       this.errorMessage = 'Error: Please enter a valid ID number.';
       return;
     }
 
-    // get content item by id
+    /*// get content item by id
     this.musicService.getContentById(this.selectedId).subscribe(
       contentItem => {
         if(contentItem) this.selectedContent = contentItem;
         this.messageService.add(`Retrieved content item at ID: ${this.selectedId}`);
       }
-    );
+    );*/
   }
 }
 

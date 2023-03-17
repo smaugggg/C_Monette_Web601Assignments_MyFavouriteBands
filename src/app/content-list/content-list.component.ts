@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Content} from "../helper-files/content-interface";
-import {MusicService} from "../Services/music.service";
+import { Component, Input, OnInit } from '@angular/core';
+import { Content } from "../helper-files/content-interface";
+import { MusicService } from "../Services/music.service";
 import { MessageService } from "../Services/message.service";
 
 @Component({
@@ -19,6 +19,7 @@ export class ContentListComponent implements OnInit {
       this.contentItems = items;
     });
   }
+
 
   imageClick(item: Content) {
       console.log(item.id + " " + item.title);

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from "rxjs";
 import { Content } from "../helper-files/content-interface";
-import { contentItems } from "../helper-files/contentDb";
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
@@ -23,11 +22,11 @@ export class MusicService {
     // return music;
   }
 
-  getContentById(id: number): Observable<Content | undefined> {
-    const item = contentItems.find(c => c.id === id);
-    if(item) {
-      this.messageService.add(`content Item at id: ${id}`);
-      return of(item);
-    } else return of(undefined);
+  addContent(newContentItem: Content): Observable<Content>{
+    return this.http.post<Content>("api/content", newContentItem, this.httpOptions);
+  }
+
+  updateContent(contentItem: Content): Observable<any>{
+    return this.http.put("api/content", contentItem, this.httpOptions);
   }
 }
