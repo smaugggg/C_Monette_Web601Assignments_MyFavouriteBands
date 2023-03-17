@@ -12,14 +12,13 @@ export class ContentListComponent implements OnInit {
   search?: string;
   contentItems: Content[] = [];
 
-  constructor(private musicService: MusicService, private messageService: MessageService) {  }
+  constructor(private musicService: MusicService) {  }
 
   ngOnInit() {
     this.musicService.getContent().subscribe(items => {
       this.contentItems = items;
     });
   }
-
 
   imageClick(item: Content) {
       console.log(item.id + " " + item.title);
