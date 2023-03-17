@@ -42,8 +42,9 @@ export class ModifyContentComponent implements OnInit {
     };
 
     this.musicService.addContent(newContentItem).subscribe(newContentFromServer => {
-      this.contentItems.push(newContentFromServer);
-      console.log(this.contentItems);
+      this.contentComponent.contentItems.push(newContentFromServer);
+      // adding something to update the view so that I can see my new band
+      this.contentComponent.contentItems = [...this.contentComponent.contentItems];
 
       this.title = '';
       this.description = '';
