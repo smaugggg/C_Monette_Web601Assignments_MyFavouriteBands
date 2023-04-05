@@ -1,9 +1,8 @@
-import {Component, Inject} from '@angular/core';
-import {Content} from "../helper-files/content-interface";
-import {MusicService} from "../Services/music.service";
-import {ContentListComponent} from "../content-list/content-list.component";
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-
+import { Component, Inject, ChangeDetectorRef } from '@angular/core';
+import { Content } from "../helper-files/content-interface";
+import { MusicService } from "../Services/music.service";
+import { ContentListComponent } from "../content-list/content-list.component";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 
 @Component({
   selector: 'add-content-dialog',
@@ -18,20 +17,12 @@ export class AddContentDialogComponent {
   creator: string = '';
   imgURL: string = '';
   type: string = '';
-  tags: string = '';
+  tagses: string = '';
 
-  constructor(private musicService: MusicService,
-              private contentComponent: ContentListComponent,
-              public dialogRef: MatDialogRef<AddContentDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: { contentType: string }
-  ) {
-    this.title = '';
-    this.creator = '';
-    this.description = '';
-    this.imgURL = '';
-    this.type = '';
-    this.tags = '';
-  }
+  constructor(
+    private musicService: MusicService,
+    private contentComponent: ContentListComponent,
+    public dialogRef: MatDialogRef<AddContentDialogComponent>) {}
 
   ngOnInit(): void {
     this.musicService.getContent().subscribe(contentItemsFromServer => {
@@ -43,9 +34,8 @@ export class AddContentDialogComponent {
     this.dialogRef.close();
   }
 
-
-  addContentToList(): void {
-    const tagsArray = this.tags.split(',').map(tag => tag.trim());
+  onAddClick(): void {
+    const tagsArray = this.tagses.split(',').map(tag => tag.trim());
 
     const newContentItem: Content = {
       id: null,
@@ -57,19 +47,8 @@ export class AddContentDialogComponent {
       tags: tagsArray
     };
 
-    this.musicService.addContent(newContentItem).subscribe(newContentFromServer => {
-      this.contentComponent.contentItems.push(newContentFromServer);
-      // adding something to update the view so that I can see my new band
-      this.contentComponent.contentItems = [...this.contentComponent.contentItems];
-
-      this.title = '';
-      this.description = '';
-      this.creator = '';
-      this.imgURL = '';
-      this.type = '';
-      this.tags = '';
-    });
+    this.dialogRef.close(newContentItem);
   }
 
-
 }
+

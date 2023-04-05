@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Content } from "../helper-files/content-interface";
 import { MusicService } from "../Services/music.service";
 import { MessageService } from "../Services/message.service";
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: 'content-list',

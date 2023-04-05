@@ -19,20 +19,13 @@
 }
 
 .contentTitle {
-  margin: 0;
-  padding-left: 10%;
-  line-height: 200%;
   background: #4c4c4c;
   color: #d4d4d4;
 }
 
 .contentGenre {
-  margin: 0;
   color: #d4d4d4;
   background: #4c4c4c;
-  font-size: 14px;
-  padding-left: 2.5%;
-  line-height: 125%;
 }
 
 .Metal > .contentTitle, .Metal > .contentGenre {
@@ -46,12 +39,8 @@
 }
 
 .contentCard img {
-  display: block;
-  position: relative;
-  float: left;
   width: 250px;
-  margin: 0;
-  padding-right: 2%;
+  height: 250px;
 }
 
 .contentMembers {

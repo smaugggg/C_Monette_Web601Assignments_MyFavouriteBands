@@ -14,50 +14,73 @@
 
 <div class="contentContainer">
   <mat-form-field><input matInput [(ngModel)]="search"></mat-form-field> <br />
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab label="Rock">
+      <h3>Content without type (rock)</h3>
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">
+        <mat-card-header class="contentTitle">
+          <mat-card-title-group>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+            <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt="" (click)="imageClick(item)">
+            <img mat-card-md-image  *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" (click)="imageClick(item)">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="contentMembers">{{ item.creator }}</p>
+          <p class="contentDesc">{{ item.description }}</p>
+          <ul *ngIf="item.tags">
+            <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+              {{ tag }}
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Metal">
+      <h3>Metal</h3>
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'Metal'; index as i; first as First" [class.is-first]="First">
+        <mat-card-header class="contentTitle">
+          <mat-card-title-group>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+            <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt=""   (click)="imageClick(item)">
+            <img mat-card-md-image  *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt=""   (click)="imageClick(item)">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="contentMembers">{{ item.creator }}</p>
+          <p class="contentDesc">{{ item.description }}</p>
+          <ul *ngIf="item.tags">
+            <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+              {{ tag }}
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="K-Pop">
+      <h3>K-Pop</h3>
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'K-Pop'; index as i; first as First" [class.is-first]="First">
+        <mat-card-header class="contentTitle">
+          <mat-card-title-group>
+            <mat-card-title>{{ item.title }}</mat-card-title>
+            <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+            <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt=""   (click)="imageClick(item)">
+            <img mat-card-md-image  *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt=""   (click)="imageClick(item)">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="contentMembers">{{ item.creator }}</p>
+          <p class="contentDesc">{{ item.description }}</p>
+          <ul *ngIf="item.tags">
+            <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
+              {{ tag }}
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
 
-  <h3>Content without type (rock)</h3>
-  <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">
-    <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
-    <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
-    <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>
-    <p class="contentMembers">{{ item.creator }}</p>
-    <p class="contentDesc">{{ item.description }}</p>
-    <ul *ngIf="item.tags">
-      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
-        {{ tag }}
-      </li>
-    </ul>
-  </div>
-
-  <h3>Metal</h3>
-  <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'Metal'; index as i; first as First" [class.is-first]="First">
-    <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
-    <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
-    <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
-    <p class="contentDesc">{{ item.description }}</p>
-    <ul *ngIf="item.tags">
-      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
-        {{ tag }}
-      </li>
-    </ul>
-  </div>
-
-  <h3>K-Pop</h3>
-  <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'K-Pop'; index as i; first as First" [class.is-first]="First">
-    <h1 class="contentTitle">{{ item.title }}</h1>
-    <h5 class="contentGenre" *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</h5>
-    <img *ngIf="item.imgURL" src="{{ item.imgURL }}"  alt="" width="250px" (click)="imageClick(item)"/>
-    <img *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" (click)="imageClick(item)"/>    <p class="contentMembers">{{ item.creator }}</p>
-    <p class="contentDesc">{{ item.description }}</p>
-    <ul *ngIf="item.tags">
-      <li class="contentTags" *ngFor="let tag of item.tags" HoverAffect affect="bold">
-        {{ tag }}
-      </li>
-    </ul>
-  </div>
 </div>
-
-
-
