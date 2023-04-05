@@ -11,7 +11,8 @@
     "generatepipe": "ng generate pipe",
     "generatedirective": "ng generate directive",
     "generateservice": "ng generate service",
-    "angularmaterial": "ng add @angular/material"
+    "angularmaterial": "ng add @angular/material",
+    "sass": "ng g schematics-scss-migrate:scss-migrate"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "@angular/router": "^15.0.0",
     "angular-in-memory-web-api": "^0.15.0",
     "rxjs": "~7.5.0",
+    "schematics-scss-migrate": "^2.3.17",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

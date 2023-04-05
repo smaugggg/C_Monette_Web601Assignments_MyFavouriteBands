@@ -6,7 +6,7 @@ import {Content} from "../helper-files/content-interface";
 @Component({
   selector: 'modify-content',
   templateUrl: './modify-content.component.html',
-  styleUrls: ['./modify-content.component.css']
+  styleUrls: ['./modify-content.component.scss']
 })
 export class ModifyContentComponent implements OnInit {
   contentItems!: Content[];

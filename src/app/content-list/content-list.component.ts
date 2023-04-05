@@ -6,7 +6,7 @@ import { MessageService } from "../Services/message.service";
 @Component({
   selector: 'content-list',
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.css']
+  styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
   search?: string;

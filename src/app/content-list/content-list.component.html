@@ -1,9 +1,9 @@
 <modify-content></modify-content>
 
 <div>
-  <label for="search">Search by title:</label>
-  <input type="text" id="search" [(ngModel)]="searchTerm">
-  <button (click)="searchContent()">Search</button>
+  <label for="search">Search by title:</label><br />
+  <mat-form-field><input matInput type="text" id="search" [(ngModel)]="searchTerm"></mat-form-field>
+  <button mat-raised-button color="primary" (click)="searchContent()">Search</button>
 </div>
 
 <div *ngIf="searchResult !== null">
@@ -13,7 +13,7 @@
 </div>
 
 <div class="contentContainer">
-  <input [(ngModel)]="search"><br />
+  <mat-form-field><input matInput [(ngModel)]="search"></mat-form-field> <br />
 
   <h3>Content without type (rock)</h3>
   <div [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">
