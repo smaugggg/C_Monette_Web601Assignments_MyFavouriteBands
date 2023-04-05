@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ContentListComponent } from "../content-list/content-list.component";
 import { MusicService } from "../Services/music.service";
 import {Content} from "../helper-files/content-interface";
+import { MatDialog } from '@angular/material/dialog';
+import { AddContentDialogComponent } from '../add-content-dialog/add-content-dialog.component';
+
 
 @Component({
   selector: 'modify-content',
@@ -18,7 +21,7 @@ export class ModifyContentComponent implements OnInit {
   type: string = '';
   tags: string = '';
 
-  constructor(private musicService: MusicService, private contentComponent: ContentListComponent) {
+  constructor(private musicService: MusicService, private contentComponent: ContentListComponent, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -54,6 +57,15 @@ export class ModifyContentComponent implements OnInit {
       this.tags = '';
     });
   }
+
+  openAddContentDialog() {
+    const dialogRef = this.dialog.open(AddContentDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
 
-// asd
+

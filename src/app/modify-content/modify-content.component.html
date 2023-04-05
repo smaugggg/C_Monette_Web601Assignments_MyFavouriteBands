@@ -1,4 +1,4 @@
-<form (ngSubmit)="addContentToList()">
+<!-- <form (ngSubmit)="addContentToList()">
   <div class="form-group">
     <label for="title">Title</label>
     <mat-form-field><input matInput type="text" id="title" class="form-control" [(ngModel)]="title" name="title"></mat-form-field>
@@ -24,5 +24,7 @@
     <mat-form-field><input matInput type="text" id="tags" class="form-control" [(ngModel)]="tags" name="tags"></mat-form-field>
   </div>
   <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Add Content</button>
-</form>
+</form> -->
 <br /><br />
+
+<button mat-raised-button color="primary" (click)="openAddContentDialog()">Add New Content</button>
