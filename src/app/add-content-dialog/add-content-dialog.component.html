@@ -1,5 +1,33 @@
 <h2 mat-dialog-title>Add New Content</h2>
+<form (ngSubmit)="addContentToList()">
 <mat-dialog-content>
-  Hi
+      <div class="form-group">
+        <label for="title">Title</label><br />
+        <mat-form-field><input matInput type="text" id="title" class="form-control" [(ngModel)]="title" name="title"></mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label><br />
+        <mat-form-field><textarea matInput id="description" class="form-control" [(ngModel)]="description" name="description"></textarea></mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="creator">Creator</label><br />
+        <mat-form-field><input matInput type="text" id="creator" class="form-control" [(ngModel)]="creator" name="creator"></mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="imgURL">Image URL</label><br />
+        <mat-form-field><input matInput type="text" id="imgURL" class="form-control" [(ngModel)]="imgURL" name="imgURL"></mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="type">Type</label><br />
+        <mat-form-field><input matInput type="text" id="type" class="form-control" [(ngModel)]="type" name="type"></mat-form-field>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags</label><br />
+        <mat-form-field><input matInput type="text" id="tags" class="form-control" [(ngModel)]="tags" name="tags"></mat-form-field>
+      </div>
 </mat-dialog-content>
-
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" type="submit">Add Content</button>
+</mat-dialog-actions>
+</form>

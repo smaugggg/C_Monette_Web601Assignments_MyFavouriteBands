@@ -50,7 +50,7 @@ import { AddContentDialogComponent } from './add-content-dialog/add-content-dial
     MatFormFieldModule,
 
   ],
-  providers: [],
+  providers: [ContentListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

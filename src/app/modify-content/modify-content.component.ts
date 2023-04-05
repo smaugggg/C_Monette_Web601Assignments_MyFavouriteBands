@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentListComponent } from "../content-list/content-list.component";
 import { MusicService } from "../Services/music.service";
-import {Content} from "../helper-files/content-interface";
+import { Content } from "../helper-files/content-interface";
 import { MatDialog } from '@angular/material/dialog';
 import { AddContentDialogComponent } from '../add-content-dialog/add-content-dialog.component';
 
@@ -9,7 +9,8 @@ import { AddContentDialogComponent } from '../add-content-dialog/add-content-dia
 @Component({
   selector: 'modify-content',
   templateUrl: './modify-content.component.html',
-  styleUrls: ['./modify-content.component.scss']
+  styleUrls: ['./modify-content.component.scss'],
+  providers: [ContentListComponent]
 })
 export class ModifyContentComponent implements OnInit {
   contentItems!: Content[];
@@ -25,10 +26,12 @@ export class ModifyContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.musicService.getContent().subscribe(contentItemsFromServer => {
+    /*this.musicService.getContent().subscribe(contentItemsFromServer => {
       this.contentItems = contentItemsFromServer;
-    });
+    });*/
   }
+
+  /* this lives in the add content dialog component now
 
   // id will be set by the server if newContentItem doesn't have one
   addContentToList(): void {
@@ -56,7 +59,7 @@ export class ModifyContentComponent implements OnInit {
       this.type = '';
       this.tags = '';
     });
-  }
+  }*/
 
   openAddContentDialog() {
     const dialogRef = this.dialog.open(AddContentDialogComponent);
@@ -67,5 +70,4 @@ export class ModifyContentComponent implements OnInit {
   }
 
 }
-
 
