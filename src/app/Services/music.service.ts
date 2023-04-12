@@ -22,6 +22,11 @@ export class MusicService {
     // return music;
   }
 
+  getContentById(id: string | null): Observable<Content> {
+    const url = `api/content/${id}`;
+    return this.http.get<Content>(url);
+  }
+
   addContent(newContentItem: Content): Observable<Content> {
     this.messageService.add('New Content has been added with:' + newContentItem.title);
     return this.http.post<Content>("api/content", newContentItem, this.httpOptions);

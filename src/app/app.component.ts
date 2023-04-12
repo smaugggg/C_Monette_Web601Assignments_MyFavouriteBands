@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import { Router } from "@angular/router";
 import { Content } from './helper-files/content-interface';
 import { MusicService } from "./Services/music.service";
 import { MessageService } from './Services/message.service';
@@ -15,13 +16,17 @@ export class AppComponent {
   @Input() selectedContent?: Content;
   errorMessage: string = '';
 
-  constructor(private musicService: MusicService, private messageService: MessageService) {  }
+  constructor(private musicService: MusicService, private messageService: MessageService, private router: Router) {  }
 
   ngOnInit() {
     const id = 8;
     //this.musicService.getContentById(id).subscribe(content => {
     //  this.featuredContent = content;
     //});
+  }
+
+  navigateToList() {
+    this.router.navigate(['/list']);
   }
 
   // Assignment 6 bonus is not quite working

@@ -12,7 +12,7 @@
     "generatedirective": "ng generate directive",
     "generateservice": "ng generate service",
     "angularmaterial": "ng add @angular/material",
-    "sass": "ng g schematics-scss-migrate:scss-migrate"
+    "route": "ng generate module app-routing --flat"
   },
   "private": true,
   "dependencies": {

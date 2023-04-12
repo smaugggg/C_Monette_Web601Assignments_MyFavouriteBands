@@ -1,35 +1,15 @@
-<div *ngIf="featuredContent">
-  <content-card [content]="featuredContent" [class.is-featured]="true"></content-card>
-</div>
+<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+  Home
+</a>
+<a routerLink="/list" routerLinkActive="active">
+  Content List
+</a>
 
-<br /><br />
-<content-list></content-list>
+<hr>
 
-<br /><br />
-<messages></messages>
+<router-outlet></router-outlet>
 
-<!-- <br /><br />
-<label for="enter-id">Enter ID:</label>
-<input type="text" id="enter-id" [(ngModel)]="selectedId">
-<button (click)="getMusic()">Submit</button>
 
-<br /><br />
-<div *ngIf="errorMessage">
-  {{ errorMessage }}
-</div>
-<div *ngIf="selectedContent">
-  <div [ngClass]="(selectedContent.type)" class="contentCard selectedContent">
-    <h1 class="contentTitle">{{ selectedContent.title }}</h1>
-    <h5 class="contentGenre" *ngIf="selectedContent.type" HoverAffect affect="underline">{{ selectedContent.type }}</h5>
-    <img *ngIf="selectedContent.imgURL" src="{{ selectedContent.imgURL }}"  alt="" width="250px" />
-    <img *ngIf="!selectedContent.imgURL" src="/assets/images/placeholder.png"  alt="" width="250px" />
-    <p class="contentMembers">{{ selectedContent.creator }}</p>
-    <p class="contentDesc">{{ selectedContent.description }}</p>
-    <ul *ngIf="selectedContent.tags">
-      <li class="contentTags" *ngFor="let tag of selectedContent.tags" HoverAffect affect="bold">
-        {{ tag }}
-      </li>
-    </ul>
-  </div>
-</div> -->
+
+
 

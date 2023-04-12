@@ -13,15 +13,17 @@
 </div>
 
 <div class="contentContainer">
-  <mat-form-field><input matInput [(ngModel)]="search"></mat-form-field> <br />
-  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
     <mat-tab label="Rock">
       <h3>Content without type (rock)</h3>
-      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter; index as i; first as First" [class.is-first]="First">
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter; index as i; first as First" [class.is-first]="First">
         <mat-card-header class="contentTitle">
           <mat-card-title-group>
             <mat-card-title>{{ item.title }}</mat-card-title>
-            <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="item.type" HoverAffect affect="underline">{{ item.type }} <br/></mat-card-subtitle>
+            <mat-card-subtitle style="text-decoration: none; font-size: 1rem;"><a [routerLink]="['/content',item.id]" routerLinkActive="active">
+              Content Details
+            </a></mat-card-subtitle>
             <img mat-card-md-image  *ngIf="item.imgURL" src="{{ item.imgURL }}" alt="" (click)="imageClick(item)">
             <img mat-card-md-image  *ngIf="!item.imgURL" src="/assets/images/placeholder.png"  alt="" (click)="imageClick(item)">
           </mat-card-title-group>
@@ -39,7 +41,7 @@
     </mat-tab>
     <mat-tab label="Metal">
       <h3>Metal</h3>
-      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'Metal'; index as i; first as First" [class.is-first]="First">
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: 'Metal'; index as i; first as First" [class.is-first]="First">
         <mat-card-header class="contentTitle">
           <mat-card-title-group>
             <mat-card-title>{{ item.title }}</mat-card-title>
@@ -61,7 +63,7 @@
     </mat-tab>
     <mat-tab label="K-Pop">
       <h3>K-Pop</h3>
-      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: search | filter: 'K-Pop'; index as i; first as First" [class.is-first]="First">
+      <mat-card  [ngClass]="(item.type)" class="contentCard" *ngFor="let item of contentItems | filter: 'K-Pop'; index as i; first as First" [class.is-first]="First">
         <mat-card-header class="contentTitle">
           <mat-card-title-group>
             <mat-card-title>{{ item.title }}</mat-card-title>
@@ -84,3 +86,7 @@
   </mat-tab-group>
 
 </div>
+
+
+<br /><br />
+<messages></messages>

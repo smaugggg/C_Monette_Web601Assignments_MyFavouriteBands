@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { Content } from "../helper-files/content-interface";
 import { MusicService } from "../Services/music.service";
 import { MessageService } from "../Services/message.service";
@@ -13,7 +14,11 @@ export class ContentListComponent implements OnInit {
   search?: string;
   contentItems: Content[] = [];
 
-  constructor(private musicService: MusicService) {  }
+  constructor(private musicService: MusicService, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+    })
+  }
 
   ngOnInit() {
     this.musicService.getContent().subscribe(items => {
