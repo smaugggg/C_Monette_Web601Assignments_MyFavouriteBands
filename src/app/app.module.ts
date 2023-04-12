@@ -29,6 +29,8 @@ import { ContentDetailComponent } from './contentdetail/contentDetail.component'
 import { FilterPipe } from './Pipes and Directives/filter.pipe';
 import { HoverAffectDirective } from './Pipes and Directives/hover-affect.directive';
 import { AppRoutingModule } from "./app-routing.module";
+import {MatIconModule} from "@angular/material/icon";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 @NgModule({
   declarations: [
@@ -43,28 +45,30 @@ import { AppRoutingModule } from "./app-routing.module";
     ContentDetailComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        FormsModule,
-        HttpClientModule,
-        HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-            dataEncapsulation: false,
-            delay: 1000,
-        }),
-        BrowserAnimationsModule,
-        MatButtonModule,
-        MatInputModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatCardModule,
-        MatTabsModule,
-        MatSelectModule,
-        RouterOutlet,
-        RouterModule,
-        AppRoutingModule,
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+      delay: 1000,
+    }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatTabsModule,
+    MatSelectModule,
+    RouterOutlet,
+    RouterModule,
+    AppRoutingModule,
+    MatIconModule,
+    MatToolbarModule,
 
-    ],
+  ],
   providers: [ContentListComponent],
   bootstrap: [AppComponent]
 })
