@@ -33,6 +33,7 @@ export class MusicService {
   }
 
   updateContent(contentItem: Content): Observable<any>{
+    this.messageService.add('Now displaying content page for: ' + contentItem.title)
     return this.http.put("api/content", contentItem, this.httpOptions);
   }
 }

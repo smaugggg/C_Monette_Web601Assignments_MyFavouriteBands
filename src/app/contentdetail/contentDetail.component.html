@@ -1,6 +1,23 @@
-<div *ngIf="contentItem">
-  <h1>{{ contentItem.title }}</h1>
-  <p>{{ contentItem.description }}</p>
-  <p>Creator: {{ contentItem.creator }}</p>
-  <!-- Add more properties as needed -->
+<div class="contentItem-container">
+
+<div *ngIf="contentItem" class="container" [ngClass]="(contentItem.type)">
+  <div class="stack">
+    <div class="card">
+      <div class="image">
+        <img *ngIf="contentItem.imgURL" src="{{ contentItem.imgURL }}" alt="">
+        <img *ngIf="!contentItem.imgURL" src="/assets/images/placeholder.png" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <h1 class="band-title">{{ contentItem.title }}</h1>
+    <div class="band-members">Band Members: {{ contentItem.creator }}</div>
+
+    <p>{{ contentItem.description }}</p>
+    <!-- Add more properties as needed -->
+  </div>
 </div>
+</div>
+
+
+<messages></messages>
