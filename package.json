@@ -12,7 +12,7 @@
     "generatedirective": "ng generate directive",
     "generateservice": "ng generate service",
     "angularmaterial": "ng add @angular/material",
-    "update": "ng update @angular/cdk @angular/cli @angular/core\n@angular/material --force"
+    "update": "ng update @angular/cdk --force @angular/cli --force @angular/core --force @angular/material --force"
   },
   "private": true,
   "dependencies": {
