@@ -23,7 +23,8 @@ export class AppComponent {
               private updateService: UpdateService) {  }
 
   ngOnInit() {
-    this.updateService.checkForUpdates();
+    this.updateService.init();
+    console.log("please");
   }
 
   navigateToList() {
