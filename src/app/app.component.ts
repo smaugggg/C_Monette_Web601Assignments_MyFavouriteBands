@@ -1,9 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, ApplicationRef } from '@angular/core';
 import { Router } from "@angular/router";
 import { Content } from './helper-files/content-interface';
 import { MusicService } from "./Services/music.service";
 import { MessageService } from './Services/message.service';
+import { SwUpdate } from "@angular/service-worker";
 import { UpdateService } from "./update.service";
+import { concat, first, interval } from 'rxjs';
+
 
 
 @Component({
@@ -20,11 +23,22 @@ export class AppComponent {
   constructor(private musicService: MusicService,
               private messageService: MessageService,
               private router: Router,
-              private updateService: UpdateService) {  }
+              private updateService: UpdateService,
+              private updates: SwUpdate,
+              private appRef: ApplicationRef) {  }
 
   ngOnInit() {
     this.updateService.init();
     console.log("please");
+
+    const appIsStable$ = this.appRef.isStable.pipe(
+      first(isStable => isStable));
+    const everyHour$ = interval(60 * 60 * 1000);
+    const everyHourOnceAppIsStable$ =
+      concat(appIsStable$, everyHour$);
+    everyHourOnceAppIsStable$.subscribe(
+      () => this.updates.checkForUpdate()
+    );
   }
 
   navigateToList() {
