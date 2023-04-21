@@ -8,11 +8,14 @@ import { RouterOutlet } from "@angular/router";
 import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatIconModule } from "@angular/material/icon";
-import { MatToolbarModule } from "@angular/material/toolbar";import { MatSelectModule } from "@angular/material/select";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSelectModule } from "@angular/material/select";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AppRoutingModule } from "./app-routing.module";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
@@ -30,8 +33,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 import { FilterPipe } from './Pipes and Directives/filter.pipe';
 import { HoverAffectDirective } from './Pipes and Directives/hover-affect.directive';
-import { AppRoutingModule } from "./app-routing.module";
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({

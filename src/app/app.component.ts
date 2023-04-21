@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { Content } from './helper-files/content-interface';
 import { MusicService } from "./Services/music.service";
 import { MessageService } from './Services/message.service';
+import { UpdateService } from "./update.service";
 
 
 @Component({
@@ -16,13 +17,13 @@ export class AppComponent {
   @Input() selectedContent?: Content;
   errorMessage: string = '';
 
-  constructor(private musicService: MusicService, private messageService: MessageService, private router: Router) {  }
+  constructor(private musicService: MusicService,
+              private messageService: MessageService,
+              private router: Router,
+              private updateService: UpdateService) {  }
 
   ngOnInit() {
-    const id = 8;
-    //this.musicService.getContentById(id).subscribe(content => {
-    //  this.featuredContent = content;
-    //});
+    this.updateService.checkForUpdates();
   }
 
   navigateToList() {
