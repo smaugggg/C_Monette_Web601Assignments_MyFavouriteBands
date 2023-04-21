@@ -12,7 +12,7 @@
     "generatedirective": "ng generate directive",
     "generateservice": "ng generate service",
     "angularmaterial": "ng add @angular/material",
-    "route": "ng generate module app-routing --flat"
+    "update": "ng update @angular/cdk @angular/cli @angular/core\n@angular/material"
   },
   "private": true,
   "dependencies": {
